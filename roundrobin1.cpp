@@ -7,6 +7,7 @@ struct Processo {
 };
 
 int quant;
+int troca_de_contexto;
 
 int main() {
     int n, i, j;
@@ -18,6 +19,9 @@ int main() {
 
     cout << "Digite o quantum: " << endl;
     cin >> quant;
+
+    cout << "Digite a o tempo de troca de contexto: " << endl;
+    cin >> troca_de_contexto;
 
     cout << "Digite os numeros dos processos: " << endl;
     for (i = 0; i < n; i++)
@@ -89,7 +93,7 @@ int main() {
         }
 
         // Considerar a troca de contexto
-        tempo += 4;
+        tempo += troca_de_contexto;
 
         if (b[index] > 0) {
             a[index] = tempo + 0.1;
@@ -110,8 +114,8 @@ int main() {
 
     // Calculando tempo médio de espera e tempo de vida
     double media_tempo_espera, media_tempo_vida;
-    media_tempo_espera = total_tempo_espera / static_cast<double>(n) - 4;
-    media_tempo_vida = total_tempo_vida / static_cast<double>(n) - 4;
+    media_tempo_espera = total_tempo_espera / static_cast<double>(n) - troca_de_contexto;
+    media_tempo_vida = total_tempo_vida / static_cast<double>(n) - troca_de_contexto;
 
     // Exibindo tempo médio de espera e tempo de vida
     cout << "O tempo medio de espera eh: " << media_tempo_espera << endl;
