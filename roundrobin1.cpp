@@ -20,7 +20,7 @@ int main() {
     cout << "Digite o quantum: " << endl;
     cin >> quant;
 
-    cout << "Digite a o tempo de troca de contexto: " << endl;
+    cout << "Digite o tempo de troca de contexto: " << endl;
     cin >> troca_de_contexto;
 
     cout << "Digite os numeros dos processos: " << endl;
