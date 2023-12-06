@@ -20,7 +20,7 @@ int main() {
     cout << "Digite o quantum: " << endl;
     cin >> quant;
 
-    cout << "Digite o tempo de troca de contexto: " << endl;
+    cout << "Digite a o tempo de troca de contexto: " << endl;
     cin >> troca_de_contexto;
 
     cout << "Digite os numeros dos processos: " << endl;
@@ -110,9 +110,43 @@ int main() {
         }
     } // fim do loop while
 
+     // Printing output
+    cout << "Numero ";
+    cout << "Tempo Chegada ";
+    cout << "     Tempo dura. ";
+    cout << "\tTempo inicio";
+    j = 0;
+    while (j != 10) {
+        j += 1;
+        cout << " ";
+    }
+    cout << "\t\tTempo Final";
+    cout << "\tTempo Espera ";
+    cout << "\tTempo de Vida" << endl;
+ 
+    for (i = 0; i < n; i++) {
+        cout << p[i].pos << "\t\t";
+        cout << p[i].AT << "\t\t";
+        cout << p[i].BT << "\t";
+        j = 0;
+        int v = 0;
+        while (s[i][j] != -1) {
+            cout << p[i].ST[j] << " ";
+            j++;
+            v += 3;
+        }
+        while (v != 40) {
+            cout << " ";
+            v += 1;
+        }
+        cout << p[i].FT << "\t\t";
+        cout << p[i].WT << "\t\t";
+        cout << p[i].TAT << endl;
+    }
+
     
 
-    // Calculando tempo médio de espera e tempo de vida
+    // Calculando tempo médio de espera e tempo de vidaS
     double media_tempo_espera, media_tempo_vida;
     media_tempo_espera = total_tempo_espera / static_cast<double>(n) - troca_de_contexto;
     media_tempo_vida = total_tempo_vida / static_cast<double>(n) - troca_de_contexto;
